@@ -6,5 +6,10 @@ module.exports = {
     proxy: 'http://localhost:8080',
     disableHostCheck: true
   },
-  outputDir: path.resolve(__dirname, '../resources/static/dist')
+
+  outputDir: path.resolve(__dirname, '../resources/static/dist'),
+
+  transpileDependencies: [
+    'vuetify'
+  ]
 }
