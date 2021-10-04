@@ -22,11 +22,14 @@ class GetApiController { // 가져오기
     }
 
     @GetMapping("/get-mapping/path-variable2/{name}/{age}") //GET http://localhost:8080/api/get-mapping/path-variable/steve
-    fun pathVariable2(@PathVariable(value = "name") _name: String, @PathVariable(name = "age") age: Int): String {
-        val name = "kotlin"
+    fun pathVariable2(@PathVariable(value = "name") _name: String, @PathVariable(name = "age") age: Int): UserRequest {
+        val user = UserRequest ().apply {
+            this.name = _name
+            this.age = age
+        }
 
         println("${_name}, ${age}")
-        return _name + " " + age
+        return user
     }
 
     // http://localhost:8080/api/page?key=value&key=value&key=value 는 쿼리 파라미터
