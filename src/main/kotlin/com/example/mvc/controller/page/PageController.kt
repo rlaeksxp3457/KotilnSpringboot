@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.ResponseBody
 class PageController {
 
     // http://localhost:8080/main
-    @GetMapping("/main")
+    @GetMapping("/")
     fun main(): String {    // text "main.html"
         println("init main")
-        return "main.html"
+        return "index.html"
     }
 
     @ResponseBody
